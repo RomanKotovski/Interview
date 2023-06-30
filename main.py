@@ -1,4 +1,4 @@
-class Stack2():
+class Stack():
 
     def __init__(self, stack:str=''):
         self.stack = list(stack)
@@ -20,9 +20,9 @@ class Stack2():
 
 pairs = ['()', '{}', '[]']
 
-def is_balanced(some_stack:Stack2):
+def is_balanced(some_stack:Stack):
     if not some_stack.isEmpty() and not some_stack.size() % 2:
-        right_stack = Stack2()
+        right_stack = Stack()
         while some_stack.size() > 1:
             last_item = some_stack.pop()
             next_item = some_stack.peek()
@@ -47,11 +47,11 @@ def is_balanced(some_stack:Stack2):
 
 
 def test():
-    stack = Stack2('(((([{}]))))')
+    stack = Stack('(((([{}]))))')
     assert is_balanced(stack)
-    stack = Stack2('[([])((([[[]]])))]{()}')
+    stack = Stack('[([])((([[[]]])))]{()}')
     assert is_balanced(stack)
-    stack = Stack2('{{[()]}}')
+    stack = Stack('{{[()]}}')
     assert is_balanced(stack)
     print('Тесты прошли успешно!')
 
